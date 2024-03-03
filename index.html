@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <style>
+       * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* --background: #011627ef; */
+  --background: #051129;
+  --main-color:#0ef;
+  --secondry: #ff0022a8;
+  --button: #0ef;
+  
+  --font: white;
+  --btnfont:#051129;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  color: var(--font);
+  background-color: var(--background);
+}
+
+
+
+/* -----------------------Home-------------------===== */
+header {
+  position: relative;
+
+  background-color: var(--background);
+  backdrop-filter: blur(15px);
+  height: 95px;
+  display: flex;
+  align-items: center;
+}
+.navbar {
+  width: 97%;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  height: auto;
+  width: 7rem;
+  border: 10px solid transparent;
+}
+.logo img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.navbar .logo a {
+  font-size: 1.5rem;
+}
+.navbar .links {
+  display: flex;
+  gap: 3rem;
+  font-size: 20px;
+  margin: 20px 25px;
+}
+.navbar .toggle-btn {
+  /* color: black; */
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+.action-btn {
+  background: var(--button);
+  border-radius: 15px;
+  border: none;
+  color: var(--btnfont);
+  padding: 0.4rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 200;
+  cursor: pointer;
+  text-decoration: none;
+}
+.action-btn:hover {
+  scale: 1.1;
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+.action-btn:active {
+  scale: 0.95;
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+a:hover {
+  color: white;
+  box-shadow: 0 0 5px cyan,
+  0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+}
+li {
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+  color: var(--font);
+}
+li a:hover {
+  font-size: 20px;
+}
+li a:after {
+  content: "";
+  width: 0;
+  height: 3px;
+  box-shadow: 0 0 5px cyan,
+  0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 2s;
+}
+li a:hover::after {
+  width: 100%;
+}
+
+/* Drop down---------------------- */
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 60px;
+  height:0;
+  width: 300px;
+  background-color: var(--background);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown-menu.open {
+  height: 380px;
+}
+.dropdown-menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown-menu .action-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#bars{
+
+  color: var(--button);
+  position: relative;
+  left: -10px;
+  
+}
+
+
+/* --------------------------About-----------------====== */
+section {
+  padding-top: 50px ;
+  background: var(--background);
+}
+section .content {
+  width: 90%;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+}
+.about .about-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+section .title span {
+  color: var(--font);
+  font-size: 30px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 8px;
+}
+section .title span::before,
+section .title span::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: var(--background);
+}
+section .title span::after {
+  bottom: -9px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about .about-details .left {
+  width: 49%;
+}
+.about .left img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.about-details .right {
+  width: 55%;
+}
+section .topic {
+  color: var(--font);
+  font-size: 25px;
+  font-weight: 200;
+  margin-bottom: 15px;
+}
+.about-details .right p {
+  text-align: justify;
+  color: var(--font);
+}
+section .button {
+  margin: 6px 0;
+  color: var(--btnfont);
+}
+section .button button {
+  outline: none;
+  padding: 10px 26px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 400;
+  margin-top: 20px;
+  color: var(--btnfont);
+
+  background: var(--button);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+section .button button:hover {
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+
+
+
+
+/* --------------------------Services-----------------====== */
+
+#services {
+  color: var(--font);
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 4rem;
+
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 60px;
+  padding-bottom: 70px;
+  color: var(--font);
+
+}
+
+.sub-title span {
+  color: var(--button);
+}
+
+.container {
+  padding: 90px;
+
+}
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+  grid-gap: 40px;
+  margin-top: 40px;
+}
+
+.services-list div {
+  background-color: transparent;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 13px;
+  border-right: 10px;
+  border-radius: 20px;
+  transition: background 0.5s, transform 0.5s;
+  box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7
+}
+
+.services-list div i {
+  font-size: 50px;
+  margin-bottom: 30px;
+
+}
+
+.services-list div h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: var(--font);
+}
+
+.services-list div a {
+  text-decoration: none;
+  color: var(--btnfont);
+  font-size: 12px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.read {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--button);
+  border-radius: 40px;
+  font-size: 16px;
+  color: var(--btnfont);
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+
+.read:hover {
+
+  box-shadow: 0 0 5px cyan,
+      0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+
+}
+
+.services-list div:hover {
+  transform: translateY(-10px);
+}
+
+/* --------------------------Project-----------------====== */
+
+.container-portfolio{
+  width: 100%;
+  height: 100vh;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.profile-box{
+  background: var(--background);
+  text-align: center;
+  padding: 40px 90px;
+  color: #fff;
+  position: relative;
+  border-radius: 20px;
+  margin: 10px;
+  transition: .5s ease;
+  background-color: transparent;
+  
+  transition: background 0.5s, transform 0.5s;
+  box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7
+}
+.profile-box:hover{
+
+  transform: scale(1.01);
+  overflow: hidden;
+
+}
+.menu-icon{
+  width: 25px;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+.setting-icon{
+  width: 25px;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+.profile-pic{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 6px;
+  margin-top: 40px;
+}
+.profile-bottom{
+  background: #0d0d0dba;
+  color: #999;
+  padding: 60px 0;
+  margin-right: -90px;
+  margin-left: -90px;
+  margin-bottom: -40px;
+  border-radius: 20px;
+  margin-top: -10px;
+}
+.profile-bottom i{
+  font-size: 2rem;
+  margin-top: 15px;
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 60px;
+  background: var(--main-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--main-color);
+  font-size: 1.6rem;
+  color: black;
+  font-size: 16px;
+  letter-spacing: .1rem;
+  font-weight: 600;
+  transition: .5s ease;
+}
+
+.btn:hover {
+  box-shadow: none;
+}
+
+.profile-box h3{
+  font-size: 22px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+.social-media img{
+  width: 20px;
+  margin: 30px 5px;
+  cursor: pointer;
+}
+
+
+/* --------------------------Contact Us-----------------====== */
+
+
+
+
+
+
+
+.contact-left {
+  flex-basis: 35%;
+}
+.contact-right {
+  flex-basis: 60%;
+}
+.contact-left p {
+  margin-top: 30px;
+}
+.contact-left p i {
+  color: var(--button);
+  margin-right: 15px;
+  font-size: 25px;
+}
+
+.social-icons {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.social-icons a {
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  color: #ababab;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+.social-icons a:hover {
+  color: var(--button);
+  transform: translateY(-5px);
+}
+.btn.btn2 {
+  display: inline-block;
+  background-color: var(--button);
+}
+.contact-right form {
+  width: 100%;
+}
+form input,
+form textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: #262626;
+  padding: 15px;
+  margin: 15px 0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+}
+form .btn2 {
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.copy {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  background: #262626;
+  font-weight: 300;
+  margin-top: 20px;
+}
+.top {
+  position: fixed;
+  bottom: 2.1rem;
+  /* right: 2,1rem; */
+}
+.top i {
+  color: #000;
+  background-color: var(--button);
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+/* --------------------footer-------------- */
+
+.section-footer{
+  background-color: var(--background);
+  transition: all 0.7s linear;
+  display: flex;
+  width: 100%;
+ justify-content: center;
+ 
+  
+}
+/* .container{
+  display: flex;
+    flex-direction: row;
+} */
+.section-footer h3{
+  color: var(--font);
+  margin-bottom: 4rem;
+
+}
+.f-about{
+  color: var(--button);
+}
+.f-links ul , .f-services ul , .f-address address{
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  justify-content: center;
+}
+.f-links li , 
+.f-links a ,
+.f-services li,
+.f-services a{
+font-size: 1.8rem;
+color: var(--font);
+text-transform: capitalize;
+}
+.f-links span,
+.f-services span, 
+.f-address span{
+  margin-right: 1rem;
+
+}
+.f-address p, 
+.f-address p a{
+
+  font-style: normal;
+  color: var(--font);
+  text-decoration: none;
+}
+
+
+
+
+
+/* ----------------------------------Responsive Media Query */
+@media (max-width: 1190px) {
+  section .content {
+    width: 85%;
+    
+  }
+}
+@media (max-width: 1000px) {
+  .about .about-details {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .about .about-details .left {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .about-details .right {
+    width: 100%;
+    margin: 40px 0;
+  }
+}
+@media (max-width: 900px) {
+  .about .left img {
+    height: 300px;
+    width: 300px;
+  }
+  section .title span {
+    color: #06283b;
+    font-size: 23px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+  }
+
+  section .button {
+    margin: 10px 30px 0;
+    position: relative;
+    right: -150px;
+  }
+}
+@media (max-width: 700px) {
+  section .title span {
+    color: #06283b;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+  }
+
+  section .button {
+    margin: 6px 30px 0;
+    position: relative;
+    right: -100px;
+  }
+}
+@media (max-width: 600px) {
+  section .title span {
+    color: #06283b;
+    font-size: 17px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  section .button {
+    margin: 6px 30px 0;
+    position: relative;
+    right: -60px;
+  }
+}
+@media (max-width: 500px) {
+  section .title span {
+    color: #06283b;
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  section .button {
+    margin: 6px 20px 0;
+  }
+}
+
+
+ 
+
+#main{
+    background-color: var(--background);
+  
+  
+}
+
+
+.container-contact{
+  display: grid;
+  grid-template-columns:repeat(2, 1fr);
+  align-items: center;
+  gap: 3rem;
+  padding-left: 30px;
+  margin-top: 130px;
+}
+.contect-text h2{
+  font-size: 90px;
+  line-height: 1;
+  text-align: center;
+  color: var(--font);
+}
+.contect-text h2 span{
+  color: #0ef;
+}
+.contect-text h4{
+  margin: 15px 0;
+  color: var(--font);
+  font-size:20px ;
+  font-weight: 600;
+}
+.contect-text p{
+  color: rgb(177, 177, 177);
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 2rem;
+}
+.contect-list{
+  margin-bottom: 3rem;
+ 
+}
+.contect-list li{
+  margin-bottom: 10px;
+  display: block;
+  color: var(--font);
+
+}
+.contect-list li{
+  margin-bottom: 10px;
+ display: block;
+
+}
+.contect-list i{
+  
+  display: inline-block;
+  color: #0ef;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all .40s ease;
+}
+.contect-list li a:hover{
+  transform: scale(1.01) translateY(-5px);
+  color: #0ef;
+}
+.contect-icons i{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--button);
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+
+}
+.contect-icons i:hover{
+  background-color: #0ef;
+  color: #081b29;
+  box-shadow: 0 0 20px#0ef;
+}
+.contect-form form input,form textarea{
+  border: none;
+  outline: none;
+  width: 90%;
+  padding: 10px;
+  background-color: #555557;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+
+}
+.contect-form textarea{
+
+  height: 220px;
+
+}
+.contect-form form .send{
+  padding: 14px 60px;
+  background-color: #0ef;
+  border-radius: 40px;
+  font-size: 18px;
+  color: #081b29;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+
+}
+.contect-form form .send:hover{
+  box-shadow: 0 0 5px cyan,
+      0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+
+}
+
+
+
+
+
+
+
+
+
+/* Responsive Media Query */
+@media (max-width: 1190px) {
+  section .content {
+    width: 85%;
+    /* display: flex; */
+  }
+}
+@media (max-width: 1000px) {
+  .about .about-details {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .about .about-details .left {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .about-details .right {
+    width: 100%;
+    margin: 40px 0;
+  }
+}
+@media (max-width: 900px) {
+  .about .left img {
+    height: 300px;
+    width: 300px;
+  }
+  section .title span {
+    color: #06283b;
+    font-size: 23px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+  }
+
+  section .button {
+    margin: 10px 30px 0;
+    position: relative;
+    right: -150px;
+  }
+}
+@media (max-width: 700px) {
+  section .title span {
+    color: #06283b;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+  }
+
+  section .button {
+    margin: 6px 30px 0;
+    position: relative;
+    right: -100px;
+  }
+}
+@media (max-width: 600px) {
+  section .title span {
+    color: #06283b;
+    font-size: 17px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  section .button {
+    margin: 6px 30px 0;
+    position: relative;
+    right: -60px;
+  }
+}
+@media (max-width: 500px) {
+  section .title span {
+    color: #06283b;
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  section .button {
+    margin: 6px 20px 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action-btn {
+    display: none;
+   
+  }
+  .navbar .toggle-btn {
+    display: block;
+  }
+  .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu.open {
+    height: 420px;
+  }
+}
+@media (max-width: 576px) {
+  .dropdown-menu {
+    left: 2rem;
+    width: unset;
+  }
+
+  .dropdown-menu.open {
+    height: 408px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <header>
+      <div class="navbar" id="Home"> 
+        <div class="logo">
+         
+           <a href="index.html"><img src="logo (4).jpeg" alt=""></a> 
+        
+        </div>
+        <ul class="links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Portfolio</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="workwithus.html">Work With Us</a></li>
+        </ul>
+        <a href="getwork.html" class="action-btn" target="_blank" >Get Work</a>
+        <a href="givework.html" class="action-btn" target="_blank">Give Work</a>
+        <div class="toggle-btn">
+          <i class="fa-solid fa-bars" id="bars"></i>
+        </div>
+      </div>
+
+      <div class="dropdown-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="workwithus.html">Work With Us</a></li>
+        <a href="getwork.html" class="action-btn" target="_blank" >Get Work</a>
+        <a href="givework.html" class="action-btn" target="_blank">Give Work</a>
+        
+      </div>
+    </header>
+  <main id="main">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="https://img.freepik.com/free-vector/website-development-banner_33099-1687.jpg?w=1380&t=st=1709395426~exp=1709396026~hmac=1937a2d50df46c50cc65dc208a91a18e47a5d4284fa696881bf7f061c025fb80" class="d-block w-100" alt="..." style="height: 80vh;">
+
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Hire Web Developers <br>You Can Hire or You Can Make Any Website with us.</h5>
+            
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://img.freepik.com/free-vector/cartoon-graphic-design-landing-page_52683-70881.jpg?t=st=1709395615~exp=1709399215~hmac=1900ff9b43fbfe9de3f571fb346b2ae04fecd3d90866fbe142651db5d183e03a&w=1060" class="d-block w-100" alt="..." style="height: 80vh;">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Web Designer</h5>
+              <p>You Can Hire or You Can Make Any Website with us.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://img.freepik.com/free-vector/digital-marketing-landing-page_33099-1726.jpg?w=1380&t=st=1709395700~exp=1709396300~hmac=2c86274e87a3a4a3c425339ca3525ad8656a2e265ddc1bd0793be035d3cb2a13" class="d-block w-100" alt="..." style="height: 80vh;">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Thanks Alot!</h5>
+              <p>You Can Hire or You Can Make Any Website with us.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+    </main>
+    <!-- ------------------------About-------------------- -->
+
+    <section class="about" id="about">
+      <div class="content">
+        <div class="title"><span>Welcome to Level Up – Fastest Growing IT Company</span></div>
+        <div class="about-details">
+          <div class="left">
+            <img src="logo (4).jpeg" alt="" />
+          </div>
+          <div class="right">
+            <div class="topic">Level Up Is Our Passion</div>
+            <p>
+              Welcome to [Level Up], your one-stop destination for all your
+              software needs! We are passionate about technology and dedicated
+              to providing you with the latest and most innovative software
+              solutions to streamline your business and enhance your digital
+              experience. At [Level Up], we understand the challenges of
+              navigating the vast landscape of software options available today.
+              That's why we've curated a comprehensive collection of
+              high-quality software products from trusted developers around the
+              globe, ensuring that you have access to the best tools to meet
+              your specific requirements. Whether you're a small startup, a
+              growing enterprise, or an individual enthusiast, we have the
+              perfect software solutions tailored to your needs. From
+              productivity software to creative tools, from security solutions
+              to gaming essentials, we've got you covered. What sets us apart is
+              our commitment to excellence in customer service. Our team of
+              experts is here to assist you every step of the way, offering
+              personalized recommendations, technical support, and guidance to
+              help you make informed decisions and maximize the value of your
+              investment. Thank you for choosing [Level Up]. We look forward to
+              serving you and being your trusted partner in the exciting world
+              of software technology.
+            </p>
+            <div class="button">
+              <button>Read Testimonials</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------Services---------------- -->
+    <section class="services" id="services">
+      <div class="container">
+          <h1 class="sub-title">Our <span>Services</span></h1>
+          <div class="services-list">
+              <div>
+                  <i class='bx bx-code-alt' style='color:#00eeff'></i>
+                  <h2>Web Development</h2>
+                  <p style="color: var(--font);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, ut incidunt sit dolore ducimus
+                      eaque quisquam ea voluptates veniam cumque dolorum, alias nostrum aperiam, saepe fugit veritatis
+                      deserunt et nesciunt!</p>
+                  <a href="#" class="read">Learn More</a>
+              </div>
+              <div>
+                  <i class='bx bxs-crop' style='color:#00eeff'></i>
+                  <h2>Graphic Design</h2>
+                  <p style="color: var(--font);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, ut incidunt sit dolore ducimus
+                      eaque quisquam ea voluptates veniam cumque dolorum, alias nostrum aperiam, saepe fugit veritatis
+                      deserunt et nesciunt!</p>
+                  <a href="#" class="read">Learn More</a>
+              </div>
+              <div>
+
+                  <i class='bx bxl-apple' style='color:#00eeff'></i>
+                  <h2>Digital Markiting</h2>
+                  <p style="color: var(--font);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, ut incidunt sit dolore ducimus
+                      eaque quisquam ea voluptates veniam cumque dolorum, alias nostrum aperiam, saepe fugit veritatis
+                      deserunt et nesciunt!</p>
+                  <a href="#" class="read">Learn More</a>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+<!-- -------------Porotfolio--------------- -->
+<h1 class="sub-title">Our <span>Portfolio</span></h1>
+<div class="container-portfolio" id="projects">
+
+  <div class="profile-box">
+      <img src="images/menu.png" alt="" class="menu-icon">
+      <img src="images/setting.png" alt="" class="setting-icon">
+      <img src="p1.jpg" alt="" class="profile-pic">
+      <h3>Nafees</h3>
+      <p>Web developer at banoqabil, Pakistan</p>
+      <div class="social-media">
+          <img src="images/instagram.png" alt="">
+          <img src="images/telegram.png" alt="">
+      </div>
+      <a href="https://nafees121.github.io/portfolio/" target="_blank"><button class="btn">View More</button></a>
+      <div class="profile-bottom">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing <br> elit. Voluptatem, recusandae.</p>
+          <i class='bx bx-down-arrow-alt'></i>
+      </div>
+  </div>
+
+  <div class="profile-box">
+      <img src="images/menu.png" alt="" class="menu-icon">
+      <img src="images/setting.png" alt="" class="setting-icon">
+      <img src="p2.jpg" alt="" class="profile-pic">
+      <h3>Bilal</h3>
+      <p>Web developer at banoqabil, Pakistan</p>
+      <div class="social-media">
+          <img src="images/instagram.png" alt="">
+          <img src="images/telegram.png" alt="">
+      </div>
+      <a href="https://b-jcoder.github.io/Bilal-s-Portfoli/" target="_blank"><button class="btn">View More</button></a>
+      <div class="profile-bottom">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing <br> elit. Voluptatem, recusandae.</p>
+          <i class='bx bx-down-arrow-alt'></i>
+      </div>
+  </div>
+
+  <div class="profile-box">
+      <img src="images/menu.png" alt="" class="menu-icon">
+      <img src="images/setting.png" alt="" class="setting-icon">
+      <img src="p3.jpeg" alt="" class="profile-pic">
+      <h3>Talha</h3>
+      <p>Web developer at banoqabil, Pakistan</p>
+      <div class="social-media">
+          <img src="images/instagram.png" alt="">
+          <img src="images/telegram.png" alt="">
+      </div>
+      <a href="https://talhafaizan.github.io/Portfolio/" target="_blank"><button class="btn">View More</button></a>
+      <div class="profile-bottom">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing <br> elit. Voluptatem, recusandae.</p>
+          <i class='bx bx-down-arrow-alt'></i>
+      </div>
+  </div>
+</div>
+
+
+
+
+    <!-- contact------------------------- -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact   <span>Us</span></h1> 
+         <p style="color: var(--font);"> <i class="fas fa-paper-plane"></i>bilalcodes@gmail.com</p>
+         <p style="color: var(--font);"> <i class="fas fa-phone-square-alt"></i>03353165603</p>
+
+            <div class="social-icons">
+              <a href=""><i class="fab fa-facebook"></i></a>
+              <a href=""><i class="fab fa-instagram"></i></a>
+              <a href=""><i class="fab fa-whatsapp"></i></a>
+              <a href=""><i class="fab fa-linkedin"></i></a>
+            </div>
+            <a href="" download class="btn btn2">Download Webpages</a>
+          </div>
+          <div class="contact-right">
+            <form action="#">
+
+              <input type="text" name="Name" placeholder="Enter Your Company Name" id="username" required autocomplete="off"/>
+
+              <input type="email" id="email" name="Email"placeholder="Enter Email" required autocomplete="off"/>
+              <input type="text" name="subject" placeholder="Subject" id="subject" required autocomplete="off"/>
+
+              <textarea name="Message" id="textarea"  rows="6" autocomplete="off" placeholder="Enter Your Message" required min= "5"> </textarea>
+  
+              <a href="project 1/index.html"><button class="btn btn2" type="submit">Send Message</button></a>
+            </form>
+            
+
+          </div>
+
+          
+          </div>
+        </div>
+      </div>
+
+
+      <!-- --------------------Footer------------ -->
+
+      <footer class="section-footer">
+        <div class="container">
+          <div class="f-about">
+            <h3>About</h3>
+            <p>Level Up Is Our Passion
+              Welcome to [Level Up], your one-stop destination for all your software needs! We are passionate about technology and dedicated to providing you with the latest and most innovative software solutions to streamline your business and enhance your digital experience. At [Level Up], we understand the challenges of navigating the vast landscape of software options available today. </p>
+              <!-- end----------------------------------- -->
+              <div class="f-links">
+                <h3>Links</h3>
+                <ul>
+                  <li><span><i class='bx bx-right-arrow-alt'></i></span><a href="#">Home</a></li>
+                  <li><span><i class='bx bx-right-arrow-alt'></i></span><a href="#">About</a></li>
+                  <li><span><i class='bx bx-right-arrow-alt'></i></span><a href="#">Services</a></li>
+                  <li><span><i class='bx bx-right-arrow-alt'></i></span><a href="#">Portfolio</a></li>
+                  <li><span><i class='bx bx-right-arrow-alt'></i></span><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+
+              <!-- ---------------------End---------------- -->
+
+              <div class="f-services">
+                <h3>Services</h3>
+                <ul>
+                  <li><span><i class='bx bx-right-arrow-alt'></i></span><a href="#">Web-Development</a></li>
+                  <li><span><i class='bx bx-right-arrow-alt'></i></span><a href="#">Graphic Designing</a></li>
+                  <li><span><i class='bx bx-right-arrow-alt'></i></span><a href="#">Digital Merkiting</a></li>
+                  
+                </ul>
+              </div>
+              <!-- ---------------------End---------------- -->
+
+              <div class="f-address">
+                <h3>Hava a Question</h3>
+                <address>
+                  <div>
+                    <p><span><i class='bx bx-location-plus' ></i></span>Karachi , Pakistan</p>
+                  </div>
+                  <div>
+                    <p><span><i class='bx bx-phone-call' ></i></span><a href="tel:+923353165603"> 03353165603</a></p>
+                  </div>
+                  <div>
+                    <p><span><i class='bx bxl-gmail' ></i></span><a href="mailto:bilacodes777@gmail.com">bilacodes777@gmail.com</a></p>
+                  </div>
+                </address>
+              </div>
+        </div>
+        
+      </footer>
+
+        
+
+      
+
+    
+
+
+
+
+
+
+
+    <script>
+      const toggleBtn = document.querySelector(".toggle-btn");
+      const toggleBtnIcon = document.querySelector(".toggle-btn i");
+      const dropDownMenu = document.querySelector(".dropdown-menu");
+      toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle("open");
+        const isOpen = dropDownMenu.classList.contains("open");
+
+        toggleBtnIcon.classList = isOpen
+          ? "fa-solid fa-xmark"
+          : "fa-solid fa-bars";
+      };
+    </script>
+  </body>
+</html>
